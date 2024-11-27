@@ -1,0 +1,581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    width: 100%;
+}
+
+.img_header img {
+    height: 140px;
+}
+
+.nav_header {
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.nav_list {
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+}
+
+.nav_list li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav_list li a:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* SECTION BEM VINDO ALTERADA PARA DISPLAY GRID*/
+.section_bem_vindo {
+    display: grid;
+    place-items: center; /* Centraliza vertical e horizontalmente */
+    gap: 20px; /* Adicionei espaçamento entre os elementos */
+    text-align: center; /* Centraliza o texto */
+}
+
+.section_destinos {
+    text-align: center;
+    padding: 20px;
+    flex: 1;
+}
+
+.destinos_populares h3{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.chamada_reserva{
+    display: grid;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.botao_reserva {
+    display: flex;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 25px; /* Ajuste o espaço acima do botão */
+    margin-bottom: 30px; /* Adiciona um espaço abaixo do botão */
+    align-self: center; /* Para garantir que ele esteja centralizado */
+}
+
+
+.botao_reserva p{
+    margin-left: 95px;
+}
+
+.titulo_destinos {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* PAI DESTINOS FOI MODIFICADA PARA DISPLAY GRID. */
+.pai_destinos {
+    display: grid;
+    gap: 30px;
+    justify-items: center; /* Alinhamento central em grid */
+    text-align: center; /* Alinha o conteúdo dentro dos elementos */
+    padding: 20px; /* Adicionei espaçamento interno */
+}
+
+/*BOX DESTINOS FOI ALTERADA PARA DISPLAY GRID, MODIFICANDO O ESPAÇAMENTO ENTRE OS CARDS. */
+
+.box_destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Alinhamento central */
+}
+.box_destinos_destinos{
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center; /* Alinhamento central */
+}
+
+.card {
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fdf1e6;
+    text-align: center;
+    transition: transform 0.2s; /* Efeito ao passar o mouse */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta a escala do card ao passar o mouse */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.card button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.card button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.card button:hover {
+    background-color: #0056b3;
+}
+
+.article_destinos {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.reserve_destinos h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#mensagem-confirmacao {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none; /* Oculta a mensagem inicialmente */
+}
+
+
+.botao_reserve {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 25px;
+}
+
+.botao_reserve:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Formulários */
+.form_pai {
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.form_pai h2 {
+    font-size: 1.8em;
+    margin: 30px 0 10px;
+    color: #004080;
+    text-align: center;
+}
+
+.form_pai p {
+    font-size: 1em;
+    margin: 5px 0 40px;
+    color: #004080;
+    text-align: center;
+}
+
+/* FORM ALTERADA PARA DISPLAY GRID*/
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px; /* Aumentei o espaçamento interno */
+}
+
+label {
+    font-weight: bold;
+    color: #004080;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus {
+    border-color: #004080;
+    outline: none;
+}
+
+/* IDA VOLTA ALTERADA PARA DISPLAY GRID, DEIXANDO UMA ABAIXO DA OUTRA. */
+.ida_volta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Coloca os campos lado a lado */
+    gap: 10px;
+}
+
+.ida_volta label {
+    flex: 1;
+}
+
+.checkbox_form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox_form label {
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+button[type="submit"] {
+    background-color: #004080;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #003366;
+}
+
+.calculadora {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.class-options {
+    display: flex;
+    gap: 10px;
+}
+
+.class-button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.class-button:hover {
+    background-color: #0056b3;
+}
+
+.extras label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* CARROSSEL ALTERADO PARA DISPLAY GRID */
+
+.carrossel {
+    display: flex; /* Mantém a estrutura básica */
+    overflow: hidden; /* Garante que nada fora do carrossel fique visível */
+    justify-content: center; /* Centraliza o conteúdo */
+    width: 100%; /* Largura total */
+    max-width: 600px; /* Limita a largura máxima */
+    height: 350px; /* Altura ajustada */
+    margin: 20px auto; /* Espaçamento ao redor */
+    padding: 10px; /* Espaço interno */
+    border: 2px solid #ccc; /* Borda do carrossel */
+    border-radius: 15px; /* Bordas curvas */
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+.carrossel-container {
+    display: flex; /* Alinha imagens lado a lado */
+    width: 100%; /* Ajusta a largura ao contêiner */
+    height: 100%; /* Ocupa toda a altura do carrossel */
+    transition: transform 0.8s ease-in-out; /* Animação de transição */
+}
+
+.carrossel-imagem {
+    width: 100%; /* A imagem ocupa 100% da largura do contêiner */
+    height: 100%; /* Ajusta a altura automaticamente para caber no carrossel */
+    object-fit: cover; /* Força a imagem a se ajustar completamente ao contêiner */
+    border-radius: 10px; /* Mantém as bordas arredondadas */
+}
+
+.carrossel-item {
+    flex: 0 0 100%; /* Cada item ocupa 100% da largura visível */
+    max-width: 100%; /* Limita a largura máxima */
+    height: auto; /* Ajusta a altura ao tamanho do carrossel */
+    display: flex; /* Para centralizar o conteúdo, se necessário */
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carrossel-container a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Mantém a cor do texto da legenda igual à cor do pai */
+}
+
+.carrossel-legenda {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: #003366;
+    color: #ffffff;
+    width: 100%;
+    border-radius: 0 0 10px 10px; /* Apenas arredonda a parte inferior da legenda */
+    margin-top: -50px; /* Dá um pequeno espaço entre a imagem e a legenda */
+}
+
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do popup */
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão de fechar popup */
+.popup-close {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-close:hover {
+    background-color: #0056b3;
+}
+
+
+/* ICONE EMAIL */
+.bi-envelope {
+    margin-right: 5px; /* Ajuste o valor conforme necessário */
+    vertical-align: middle; /* Alinha verticalmente o ícone com o texto */
+}
+
+#mensagem-confirmacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+    display: none; /* Oculta a mensagem inicialmente */
+}
+
+/*CSS TABELA FILTRADA POR PREÇOS */
+
+/* Estilos para tabela */
+.price-section {
+    margin-top: 30px;
+}
+
+#price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#price-table th, #price-table td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+}
+
+#price-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.add-price-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-price-form input, .add-price-form button {
+    padding: 10px;
+    font-size: 16px;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilo dos Botões de Buscar e Limpar Busca */
+.add-price-form {
+    display: flex; /* Usando Flexbox para o layout */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente, se necessário */
+    gap: 15px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Margem no topo */
+}
+
+.add-price-form button {
+    padding: 12px 25px;
+    background-color: #86d1f3; /* Cor de fundo azul */
+    color: #fff; /* Texto branco */
+    border: none;
+    border-radius: 5px; /* Borda arredondada */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transição suave para hover e focus */
+}
+
+/* Efeito ao passar o mouse (hover) */
+.add-price-form button:hover {
+    background-color: #68b4e3; /* Tom de azul mais escuro */
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Efeito ao clicar (active) */
+.add-price-form button:active {
+    background-color: #4c9dbf; /* Cor mais escura quando pressionado */
+    transform: scale(1); /* Sem aumento ao clicar */
+}
+
+/* Foco no botão (focus) */
+.add-price-form button:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(134, 209, 243, 0.8); /* Sombra azul clara para foco */
+}
+
+/* Botão Limpar Busca (estilo opcional para diferenciá-lo) */
+.add-price-form #clear-search-btn {
+    background-color: #f44336; /* Cor vermelha para "Limpar" */
+}
+
+.add-price-form #clear-search-btn:hover {
+    background-color: #e53935; /* Vermelho mais escuro ao passar o mouse */
+}
+
+.add-price-form #clear-search-btn:active {
+    background-color: #d32f2f; /* Cor vermelha mais escura ao clicar */
+}
